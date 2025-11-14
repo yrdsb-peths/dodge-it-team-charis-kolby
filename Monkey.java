@@ -5,8 +5,6 @@ public class Monkey extends Actor
     private boolean atTop = true;
     public void act()
     {
-        GreenfootImage image = getImage();
-        image.scale(50, 65);
         if (Greenfoot.mouseClicked(null))
         {
             atTop = !atTop;
