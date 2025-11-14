@@ -9,7 +9,16 @@ public class Banana extends Actor
        if (getX() <= 0)
        {
            resetBanana();
-       }// Add your action code here.
+       }
+       
+       if (isTouching(Monkey.class)){
+            World world = getWorld();
+            world.removeObject(this);
+            
+            SadFace sadFace = new SadFace();
+            world.addObject(sadFace, world.getWidth() / 2, world.getHeight() / 2);
+            Greenfoot.stop();
+        }
     }
     
     public void resetBanana() {
