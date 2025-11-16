@@ -3,18 +3,24 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Banana extends Actor
 {
     private int speed = -2;
+    private int lastScore = 0;
     public void act()
     {
+       MyWorld myWorld = (MyWorld) getWorld();
+       World world = getWorld();
+       
+       if (myWorld.getScore() != lastScore && myWorld.getScore() % 2 == 0){
+           speed -= 2;
+           lastScore = myWorld.getScore();
+       }
        move(speed);
        if (getX() <= 0)
        {
-           MyWorld myWorld = (MyWorld) getWorld();
            myWorld.increaseScore();
            resetBanana();
        }
        
        if (isTouching(Monkey.class)){
-            World world = getWorld();
             world.removeObject(this);
             
             SadFace sadFace = new SadFace();
