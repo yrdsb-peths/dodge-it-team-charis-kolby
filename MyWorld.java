@@ -1,22 +1,23 @@
 import greenfoot.*;
 
 public class MyWorld extends World {
-    private int score = 0;
-    
+    Score score;
+    Monkey monkey;
     public MyWorld() {
         super(600, 400, 1);
-        showText("Score: " + score, 500, 50);
+        score = new Score();
         Banana banana = new Banana();
-        Monkey monkey = new Monkey();
+        monkey = new Monkey();
         addObject(monkey, 100, 100);
         addObject(banana, 600, 100);
+        addObject(score, 500 ,50);
     }
     
-    public int getScore(){
+    public Score getScoreActor(){
         return score;
     }
-    public void increaseScore(){
-        score++;
-        showText("Score: " + score, 500, 50);
+    
+    public Monkey getMonkeyActor(){
+        return monkey;
     }
 }
