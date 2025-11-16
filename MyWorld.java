@@ -4,10 +4,18 @@ public class MyWorld extends World {
     Score score;
     Monkey monkey;
     private int lives = 3;
+    private final int livesFinal = 3;
     private Lives[] livesActors = new Lives[lives];
     
     public MyWorld() {
         super(600, 400, 1);
+        initiateWorld();
+    }
+    
+    public void initiateWorld()
+    {
+        lives = livesFinal;
+        removeObjects(getObjects(null));
         score = new Score();
         Banana banana = new Banana();
         monkey = new Monkey();
@@ -22,7 +30,6 @@ public class MyWorld extends World {
             livesActors[i] = liveActor;
         }
     }
-    
     public Score getScoreActor(){
         return score;
     }

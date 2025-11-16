@@ -72,13 +72,16 @@ public class Banana extends Actor
         int worldHalfHeight = world.getHeight() / 2;
         
         SadFace sadFace = new SadFace();
+        world.addObject(sadFace, worldHalfWidth, worldHalfHeight);
+        
         score.hide();
         monkey.hide();
         
         GameOver gameOverObj = new GameOver();
         gameOverObj.showScore(score.getScore());
         world.addObject(gameOverObj, worldHalfWidth, worldHalfHeight + 50);
-        world.addObject(sadFace, worldHalfWidth, worldHalfHeight);
-        Greenfoot.stop();
+        
+        Button buttonObj = new Button();
+        world.addObject(buttonObj, worldHalfWidth, worldHalfHeight + 100);
     }
 }
