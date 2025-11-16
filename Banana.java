@@ -2,12 +2,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class Banana extends Actor
 {
+    private int speed = -2;
     public void act()
     {
-        move (-10);
-       
+       move(speed);
        if (getX() <= 0)
        {
+           MyWorld myWorld = (MyWorld) getWorld();
+           myWorld.increaseScore();
            resetBanana();
        }
        
