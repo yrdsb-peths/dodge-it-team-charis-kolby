@@ -24,7 +24,10 @@ public class Banana extends Actor
             world.removeObject(this);
             
             SadFace sadFace = new SadFace();
-            world.addObject(sadFace, world.getWidth() / 2, world.getHeight() / 2);
+            int worldHalfWidth = world.getWidth() / 2;
+            int worldHalfHeight = world.getHeight() / 2;
+            world.addObject(sadFace, worldHalfWidth, worldHalfHeight);
+            world.showText("You lost! Your score was " + myWorld.getScore(), worldHalfWidth, worldHalfHeight + 50);
             Greenfoot.stop();
         }
     }
