@@ -17,9 +17,9 @@ public class MyWorld extends World {
         addObject(score, 500 ,50);
         
         for (int i = 0; i < lives; i++){
-            Lives lives = new Lives();
-            addObject(lives, 50 + 30 * i, 50);
-            livesActors[i] = lives;
+            Lives liveActor = new Lives();
+            addObject(liveActor, 50 + 30 * i, 50);
+            livesActors[i] = liveActor;
         }
     }
     
