@@ -19,4 +19,10 @@ public class Monkey extends Actor
             setLocation(100, 300);
         }
     }
+    
+    public void hide()
+    {
+        World world = getWorld();
+        world.removeObject(this);
+    }
 }
